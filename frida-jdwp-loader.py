@@ -1039,7 +1039,7 @@ class AndroidDeviceManager:
 
         self._select_device()
 
-        if package_name is not None and not self._check_package_exists():
+        if package_name is None or not self._check_package_exists():
             raise ValueError(f"Invalid package name: {package_name}")
 
     def detect_device_abi(self) -> list:
